@@ -40,8 +40,134 @@
           </p>
         </section>
 
-      </div>
+        <section>
+          <h3>Types of tests</h3>
+        </section>
 
+        <section>
+          <p>Acceptance tests</p>
+        </section>
+
+        <section>
+          <p>Integration tests</p>
+        </section>
+
+        <section>
+          <p>Unit tests</p>
+        </section>
+
+        <section>
+          <p>Testing pyramid</p>
+        </section>
+
+        <section>
+          <p>Feedback cycles</p>
+        </section>
+
+        <section>
+          <p>Top-down testing</p>
+        </section>
+
+        <section>
+          <p>Role of acceptance test</p>
+        </section>
+
+        <section>
+          <p>Outside can be shown early</p>
+        </section>
+
+        <section>
+          <p>Smoke test</p>
+        </section>
+
+        <section>
+          <p>How to write good abstract tests?</p>
+        </section>
+
+        <section>
+          <p>Imperative vs Declartive</p>
+
+          <pre><code class="ruby" data-trim contenteditable>
+page.click_button "Login"
+page.should have_content("Welcome, jack@daniles.com!")
+          </code></pre>
+          <p>vs</p>
+          <pre><code class="ruby" data-trim contenteditable>
+And I click "Login" button
+Then I should see "Welcome, jack@daniles.com!"
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Abstract</p>
+          <pre><code class="ruby" data-trim contenteditable>
+login_page.open
+login_page.login("jack@daniels.com", "sardines")
+login_page.should_be_logged_as("jack@daniels.com")
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Page object</p>
+          <pre><code class="ruby" data-trim contenteditable>
+class LoginPage < Page
+  def open
+    visit '/login'
+  end
+
+  def login(email, password)
+    fill_in "Email", with: email
+    fill_in "Password", with: password
+    click_button "Login"
+  end
+
+  def should_be_logged_as(email)
+    within(".navbar") do
+      page.should have_content(email)
+    end
+  end
+end
+          </code></pre>
+        </section>
+
+        <section>
+          <p>End to End</p>
+        </section>
+
+        <section>
+          <p>Capybara</p>
+        </section>
+
+        <section>
+          <p>rack-test vs headless</p>
+        </section>
+
+        <section>
+          <p>poltergeist</p>
+        </section>
+
+        <section>
+          <h3>Exercise</h3>
+        </section>
+
+        <section>
+          <p>Blog 2.0</p>
+          <a href="https://github.com/wrozka/blog">github.com/wrozka/blog</a>
+        </section>
+
+        <section>
+          <p>Posting is already implemented</p>
+        </section>
+
+        <section>
+          <p>It needs comments and ratings</p>
+        </section>
+
+        <section>
+          <p>Focus on acceptance test, create a new page object</p>
+          <p>Implement as little as possible</p>
+        </section>
+      </div>
     </div>
 
     <script src="lib/js/head.min.js"></script>
