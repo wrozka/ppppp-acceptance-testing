@@ -54,14 +54,21 @@
 
         <section>
           <p>Unit tests</p>
+          <img src="img/unit-test-all.jpg" alt="unit tests" />
         </section>
 
         <section>
           <p>Testing pyramid</p>
+          <img src="img/pyramid.gif" alt="pyramid" />
         </section>
 
         <section>
           <p>Feedback cycles</p>
+          <ul>
+            <li>Acceptance ~ minutes</li>
+            <li>Integration ~ seconds</li>
+            <li>Unit ~ milliseconds</li>
+          </ul>
         </section>
 
         <section>
@@ -73,11 +80,13 @@
         </section>
 
         <section>
-          <p>Outside can be shown early</p>
+          <p>Can be shown early</p>
+          <img src="img/complex-ui.png" alt="complex ui" />
         </section>
 
         <section>
           <p>Smoke test</p>
+          <img src="img/smoke-test.jpg" alt="smoke test" />
         </section>
 
         <section>
@@ -135,7 +144,19 @@ end
         </section>
 
         <section>
-          <p>Capybara</p>
+          <a href="https://github.com/jnicklas/capybara">capybara</a>
+
+          <pre><code class="ruby" data-trim contenteditable>
+feature "Adding messages to timeline" do
+  scenario "adding a message to a friend timeline" do
+    timeline.open("joe")
+
+    timeline.add_message("I like cats")
+
+    timeline.should have_message("I like cats")
+  end
+end
+          </code></pre>
         </section>
 
         <section>
@@ -144,6 +165,7 @@ end
 
         <section>
           <p>poltergeist</p>
+          <img src="img/phantomjs-logo.png" alt="PhanotmJS" />
         </section>
 
         <section>
