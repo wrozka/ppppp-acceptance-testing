@@ -59,7 +59,9 @@
 
         <section>
           <p>Testing pyramid</p>
-          <img src="img/pyramid.gif" alt="pyramid" />
+          <a href="http://www.duncannisbet.co.uk/test-automation-basics-levels-pyramids-quadrants">
+            <img src="img/pyramid.gif" alt="pyramid" />
+          </a>
         </section>
 
         <section>
@@ -139,6 +141,23 @@ class LoginPage < Page
   def should_be_logged_as(email)
     within(".navbar") do
       page.should have_content(email)
+    end
+  end
+end
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Page object for a fragment</p>
+          <pre><code class="ruby" data-trim contenteditable>
+class TweetPage < Page
+  def initialize(tweet)
+    @tweet = tweet
+  end
+
+  def retweet
+    within("tweet-{@tweet.id}") do
+      click_button("Retweet")
     end
   end
 end
